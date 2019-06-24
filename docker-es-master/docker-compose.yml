@@ -1,0 +1,13 @@
+version: "3"
+services:
+    es-master:
+        image: elasticsearch:7.1.0
+        container_name: es-master
+        environment: # setting container env
+            - ES_JAVA_OPTS=${ES_JVM_OPTS}   # set es bootstrap jvm args
+        restart: always
+        volumes:
+            - ./es-config/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml
+            - ${MASTER_DATA_DIR}:/usr/share/elasticsearch/data:rw
+            - ${MASTER_LOGS_DIR}:/usr/share/elasticsearch/logs:rw
+        network_mode: "host"
