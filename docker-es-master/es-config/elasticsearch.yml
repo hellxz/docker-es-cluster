@@ -6,7 +6,7 @@ node.data: false
 node.attr.rack: r1 
 bootstrap.memory_lock: true 
 http.port: 9200
-network.host: 0.0.0.0
+network.host: 10.2.114.110
 transport.tcp.port: 9300
 discovery.seed_hosts: ["10.2.114.110:9301","10.2.114.110:9302","10.2.114.110:9303","10.2.114.110:9304"] 
 cluster.initial_master_nodes: ["master"] 
